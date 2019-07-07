@@ -132,7 +132,7 @@ function SetupForPool(logger, poolOptions, setupFinished){
         }, true);
      }
      function validateZAddress (callback) {
-        daemon.cmd('z_validateaddress', [poolOptions.zAddress], function(result) {
+        daemon.cmd('validateaddress', [poolOptions.zAddress], function(result) {
             if (result.error){
                 logger.error(logSystem, logComponent, 'Error with payment processing daemon (validateZAddress) ' + JSON.stringify(result.error));
                 callback(true);
